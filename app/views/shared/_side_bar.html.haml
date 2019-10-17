@@ -11,8 +11,9 @@
           = fa_icon 'cog', class: 'icon'
 
 .groups
-  .group
-    .group__group-name
-      Group名
-    .group__latest-message
-      未開発
+  - current_user.groups.each do |s|
+    .group
+      .group__group-name
+        = s.name
+      .group__latest-message
+        未開発        

@@ -17,4 +17,5 @@ module ChatSpace2
     end
 
   end
+
 end
