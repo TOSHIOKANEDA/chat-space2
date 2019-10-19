@@ -11,9 +11,10 @@
           = fa_icon 'cog', class: 'icon'
 
 .groups
-  - current_user.groups.each do |s|
+  - current_user.groups.each do |g|
     .group
-      .group__group-name
-        = s.name
-      .group__latest-message
-        未開発        
+      = link_to group_messages_path(g) do
+        .group__group-name
+          = g.name
+        .group__latest-message
+          = g.show_last_message    

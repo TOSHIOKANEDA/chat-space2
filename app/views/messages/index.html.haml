@@ -1,0 +1,34 @@
+  
+.wrapper
+  .chat-side
+    = render "shared/side_bar"
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        .main-header__left-box__current-group
+          Sample
+        .main-header__left-box__member-list
+          Member :
+          .main-header__left-box__member-list__member
+            Sample
+      .main-header__edit-btn
+        Edit
+    .messages
+      .message
+        .message__upper-info
+          .message__upper-info__talker
+            Mr Sample
+          .message__upper-info__date
+            2019/09/28(Sat) 19:52:16
+        .message__text
+          こんにちは
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, placeholder: "write somethings", class: 'input-box'
+        .new_message
+          .upload_label
+            =f.label :image, class: "upload-file" do
+              = fa_icon 'picture-o', class: "icon"
+              = f.file_field :image, class: "hidden"
+          = f.submit 'Send', class: "submit-btn"
