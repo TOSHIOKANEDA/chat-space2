@@ -24,19 +24,12 @@
         .message__text
           こんにちは
     .form
-    
       .new_message
-      
-        .input-box
- 
-            
+        .input-box 
           = form_for [@group, @message] do |f|
             = f.text_field :content, placeholder: "write somethings", class: 'input-box'
             %label.upload-label{class: "upload-file"}
               %i.fa.fa-picture-o
               = f.file_field :image, class: "upload-file__default"
-          
-            
-    
         .submit-btn
           =f.submit
