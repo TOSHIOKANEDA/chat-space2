@@ -1,4 +1,3 @@
-  
 .wrapper
   .chat-side
     = render "shared/side_bar"
@@ -14,22 +13,15 @@
             Sample
       .main-header__edit-btn
         Edit
+
     .messages
-      .message
-        .message__upper-info
-          .message__upper-info__talker
-            Mr Sample
-          .message__upper-info__date
-            2019/09/28(Sat) 19:52:16
-        .message__text
-          こんにちは
+
     .form
       .new_message
         .input-box 
           = form_for [@group, @message] do |f|
-            = f.text_field :content, placeholder: "write somethings", class: 'input-box'
-            %label.upload-label{class: "upload-file"}
-              %i.fa.fa-picture-o
-              = f.file_field :image, class: "upload-file__default"
-        .submit-btn
-          =f.submit
+            = f.text_field :content, placeholder: "write somethings", class: 'input-box__text'
+            = f.label :image, class: "input-box__upload-file" do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: "input-box__upload-file__hidden"
+            = f.submit 'Send', class: "submit-btn", id: "btn"

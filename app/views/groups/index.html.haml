@@ -1,3 +1,33 @@
 .wrapper
 
   = render 'shared/side_bar'
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        .main-header__left-box__current-group
+          Sample
+        .main-header__left-box__member-list
+          Member :
+          .main-header__left-box__member-list__member
+            Sample
+      .main-header__edit-btn
+        Edit
+    .messages
+      .message
+        .message__upper-info
+          .message__upper-info__talker
+            Mr Sample
+          .message__upper-info__date
+            2019/09/28(Sat) 19:52:16
+        .message__text
+          こんにちは
+    .form
+      .new_message
+        .input-box 
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, placeholder: "write somethings", class: 'input-box'
+            %label.upload-label{class: "upload-file"}
+              %i.fa.fa-picture-o
+              = f.file_field :image, class: "upload-file__default"
+              = f.submit class: "submit-btn"
