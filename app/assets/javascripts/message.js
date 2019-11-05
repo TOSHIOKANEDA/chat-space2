@@ -45,7 +45,7 @@ $(function(){
         }, 300, 'swing');
       }
       $(".messages").append(html)
-      $(".input-box__text").val("")
+      $(".input-box__text").reset();
       scrollBottom();
     })
 
