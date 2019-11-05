@@ -91,28 +91,32 @@ $head_height: 100px;
 }
 
 .message {
-  padding-bottom: 40px;
+  margin-bottom: 25px;
+  display: block;
   &__text {
+    flex-direction: column;
     color: #434a54;
     font-size: 14px;
     margin-bottom: 10px;
+    top: 15px;
+
   }
-  &__upper-info {
+  &__talker {
+    color: #434a54;
+    font-size: 16px;
+    font-weight: bold;
     display: flex;
-    margin-bottom: 10px;
-    &__talker {
-      color: #434a54;
-      font-size: 16px;
-      font-weight: bold; 
-    }
+    padding-bottom: 15px;
     &__date {
-      color: $small_word_color;
       font-size: 12px;
       margin-left: 10px;
+      margin-top: 4px;
+      color: $small_word_color;
+    }
     }
   }
   
-}
+
 
 .main-header {
   height: $head_height;
@@ -158,43 +162,47 @@ $head_height: 100px;
 }
 
 .new_message {
-  
   display: flex;
   .input-box {
-    height: 50px;
-    width: 100%;
-    padding: 0 10px 0 10px;
+    padding-left: 10px;
     color: #434a54;
     line-height: 50px;
     font-size: 16px;
     border-style: none;
     background-color: white;
-
-
+    float: left;
+    position: relative;
     
-  }
 
-  .upload-label {
-    float: right;
-    margin: 0px 0px 10px 0px;
-    i {
+    &__text {
+      padding: 0 10px;
+      border-width: 0px;
+      box-sizing: border-box;
+      width: 1000px;
+      border-width: 0px;
+      
+    }
+
+
+    &__upload-file {
+      position: absolute;
+      margin: 0px 0px 0px 1120px;
       cursor: pointer;
       font-size: 1.3em;
       color: black;
-    }
-    .upload-file {
-      &__default {
-        display: none;
+        &__hidden {
+          display: none;
+        }
       }
     }
   }
-}
+
   
 .submit-btn {
   width: 100px;
   height: 50px;
   padding: 15px 30px;
-  margin-left: 15px;
+  margin-left: 180px;
   background-color: #38aef0;
   color: white;
 }
