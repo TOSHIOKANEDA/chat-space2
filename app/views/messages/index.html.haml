@@ -2,17 +2,19 @@
   .chat-side
     = render "shared/side_bar"
 
+
   .chat-main
     .main-header
       .main-header__left-box
         .main-header__left-box__current-group
-          Sample
+          = @group.name
         .main-header__left-box__member-list
           Member :
           .main-header__left-box__member-list__member
-            Sample
+            - @users.each do |user|
+              = user.name
       .main-header__edit-btn
-        Edit
+        = link_to 'EDIT', edit_group_path(@group)
 
     .messages
 
