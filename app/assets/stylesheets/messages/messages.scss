@@ -87,7 +87,7 @@ $head_height: 100px;
   height: 749px - 24px;
   padding: 46px 40px;
   background-color: #fafafa;
-  overflow: scroll;
+  overflow: scroll;  
 }
 
 .message {
@@ -99,23 +99,30 @@ $head_height: 100px;
     font-size: 14px;
     margin-bottom: 10px;
     top: 15px;
-
   }
-  &__talker {
+}
+
+.upper-message__user-name {
     color: #434a54;
     font-size: 16px;
     font-weight: bold;
     display: flex;
-    padding-bottom: 15px;
-    &__date {
-      font-size: 12px;
-      margin-left: 10px;
-      margin-top: 4px;
-      color: $small_word_color;
-    }
-    }
-  }
-  
+    
+}
+
+.upper-message__data {
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 4px;
+  color: $small_word_color;
+  padding-bottom: 15px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
 
 
 .main-header {

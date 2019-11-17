@@ -11,12 +11,29 @@
         .main-header__left-box__member-list
           Member :
           .main-header__left-box__member-list__member
-            - @users.each do |user|
-              = user.name
+            - if @users
+              - @users.each do |user|
+                = user.name
       .main-header__edit-btn
         = link_to 'EDIT', edit_group_path(@group)
 
     .messages
+      - if @messages
+        - @messages.each do |message|
+          .message{"data-id": "#{message.id}"}
+            .upper-message
+              .upper-message__user-name
+                = message.user.name
+                .upper-message__data
+                  = message.created_at.strftime("%Y/%m/%d(%a) %H:%M")
+            .lower-message
+              - if message.content.present?
+                %p.lower-message__content
+                  = message.content
+              = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+                
+                  
+
 
     .form
       .new_message

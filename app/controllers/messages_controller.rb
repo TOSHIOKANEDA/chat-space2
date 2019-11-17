@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @message = @group.messages.new(message_params)
     if @message.save
+     
       flash[:notice] = "メッセージ登録しました"
       respond_to do |format|
         format.json
@@ -28,4 +29,5 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
+  
 end
