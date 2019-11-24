@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
-
+  # protect_from_forgery except: :message_params
+  
   def index
     @group = Group.find(params[:group_id])
     @message = Message.new
@@ -9,12 +10,12 @@ class MessagesController < ApplicationController
 
   def create
     @group = Group.find(params[:group_id])
-    @message = @group.messages.new(message_params)
+    @message = @group.messages.new(message_params)   
     if @message.save
-     
-      flash[:notice] = "メッセージ登録しました"
+      #flash[:notice] = "メッセージ登録しました"
       respond_to do |format|
-        format.json
+        format.html{ redirect_to group_messages_path(@group) }
+        format.json        
       end
     else
       @messages = @group.messages.includes(:user)
