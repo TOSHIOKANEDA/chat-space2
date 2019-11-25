@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function(){
 
     function addMember(userId) {
       let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
@@ -65,7 +65,7 @@ $(function() {
       })
   });
   $(document).on('click','#button' , function(){
-    console.log
+
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
   $(this)

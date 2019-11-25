@@ -61,6 +61,7 @@ $head_height: 100px;
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
+  width: 300px;
 }
 
 .group{
@@ -167,9 +168,12 @@ img {
   padding: 20px 40px;
   background-color: #ddd;
   margin: 0;
+  display: flex;
+  overflow: scroll;
 }
 
 .new_message {
+  position: absolute;
   display: flex;
   .input-box {
     padding-left: 10px;
@@ -184,15 +188,17 @@ img {
       padding: 0 10px;
       border-width: 0px;
       box-sizing: border-box;
-      border-width: 0px;
       height: 50px;
-      width: 100%;
+      width: calc(85vw - 300px);
+      position: relative;
+
     }
 
 
     &__upload-file {
       cursor: pointer;
-  
+      background-color: white;
+      padding-right: 10px;
       font-size: 1.3em;
       color: black;
         &__hidden {
@@ -200,13 +206,14 @@ img {
         }
       }
     }
+    #btn {
+      position: absolute;
+      right: -120px;
+      height: 50px;
+      padding: 15px 30px;
+      background-color: #38aef0;
+      color: white;
+    }
   }
 
-  .submit-btn {
-    margin-left: 15px;
-    border-left: 20px solid #ddd;
-    height: 50px;
-    padding: 15px 30px;
-    background-color: #38aef0;
-    color: white;
-  }
+
