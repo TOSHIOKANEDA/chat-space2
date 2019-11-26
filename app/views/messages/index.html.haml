@@ -32,14 +32,11 @@
                   = message.content
               = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
                 
-                  
-
-
     .form
       .new_message
         .input-box 
           = form_for [@group, @message] do |f|
-            = f.text_field :content, placeholder: "write somethings", class: 'input-box__text'
+            = f.text_field :content, placeholder: "write", class: 'input-box__text'
             = f.label :image, class: "input-box__upload-file" do
               = fa_icon 'picture-o', class: 'icon'
               = f.file_field :image, class: "input-box__upload-file__hidden"
