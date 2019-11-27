@@ -20,7 +20,6 @@ div {
   width: 300px;
   color: $side_color;
   float: left;
-  height: 939px;
 }
 
 .side-header {
@@ -62,7 +61,7 @@ div {
 
 
 .groups {
-  height: 749px + (90px - 24px);
+  height: calc(100vh - 100px);
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
@@ -87,7 +86,7 @@ div {
 
 
 .messages {
-  height: 749px - 24px;
+  height: calc(100vh - 100px - 90px);
   padding: 46px 40px;
   background-color: #fafafa;
   overflow: scroll;  
@@ -131,6 +130,7 @@ img {
 
 
 .chat-main {
+  height: calc(100vh - 100px);
   width: calc(100vw - 300px);
   float: left;
   .main-header {
@@ -173,6 +173,8 @@ img {
     height: 90px;
     padding: 20px;
     background-color: #ddd;
+    position: fixed;
+    bottom: 0;
     .new_message {
       
       .input-box {
